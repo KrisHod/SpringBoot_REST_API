@@ -1,6 +1,7 @@
-package com.spring.rest.service;
+package com.springboot.springboot_app.service;
 
-import com.spring.rest.entity.Employee;
+
+import com.springboot.springboot_app.entity.Employee;
 
 import java.util.List;
 

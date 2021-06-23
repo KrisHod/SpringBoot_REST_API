@@ -1,7 +1,8 @@
-package com.spring.rest.service;
+package com.springboot.springboot_app.service;
 
-import com.spring.rest.entity.Employee;
-import com.spring.rest.repository.IEmployeeRepository;
+
+import com.springboot.springboot_app.entity.Employee;
+import com.springboot.springboot_app.repository.IEmployeeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -9,7 +10,7 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 
 @Service
-public class EmployeeService implements IEmployeeService{
+public class EmployeeService implements IEmployeeService {
     @Autowired
     private IEmployeeRepository employeeRepository;
 
