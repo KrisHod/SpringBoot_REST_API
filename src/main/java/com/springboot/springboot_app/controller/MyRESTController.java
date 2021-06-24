@@ -1,12 +1,9 @@
-package com.spring.rest.controller;
+package com.springboot.springboot_app.controller;
 
-import com.spring.rest.entity.Employee;
-import com.spring.rest.exception.EmployeeIncorrectData;
-import com.spring.rest.exception.NoSuchEmployeeException;
-import com.spring.rest.service.IEmployeeService;
+
+import com.springboot.springboot_app.entity.Employee;
+import com.springboot.springboot_app.service.IEmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -25,12 +22,8 @@ public class MyRESTController {
 
     @GetMapping("/employees/{id}")
     public Employee getById(@PathVariable int id) {
-        Employee employee = employeeService.getById(id);
 
-        if (employee == null) {
-            throw new NoSuchEmployeeException("There is no employee with ID = " + id + " in DB");
-        }
-        return employee;
+        return employeeService.getById(id);
     }
 
     @PostMapping("/employees")
@@ -48,9 +41,6 @@ public class MyRESTController {
     @DeleteMapping("/employees/{id}")
     public String deleteEmployee(@PathVariable int id) {
         Employee employee = employeeService.getById(id);
-        if (employee == null) {
-            throw new NoSuchEmployeeException("There is no employee with ID = " + id + " in DB");
-        }
 
         employeeService.deleteById(id);
         return "Employee with ID = " + id + " was deleted.";
